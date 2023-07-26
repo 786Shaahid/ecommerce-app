@@ -1,0 +1,105 @@
+.bodyContainer{
+  width:98%;
+  height:40rem;
+  background-color:#4d2828;
+  padding:1rem;
+  margin:1px auto;
+  position:relative;
+}
+.sortByPriceBtn{
+  width:8rem;
+  height:2rem;
+  background-color:white;
+  border-radius:10px;
+  position:absolute;
+  top:10px;
+  right:2rem;
+  text-align:center;
+  font-size:15px;
+  font-weight:600;
+}
+.crossBtn{
+  width:1rem;
+  height:1rem;
+}
+.itemCart{
+  width:50rem;
+  height:10rem;
+  margin:10px auto;
+  background-color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+}
+.leftBox{
+  width:30%;
+  height:9.5rem;
+}
+.imgBox{
+  width:10rem;
+  height:8rem;
+  border:2px solid black;
+  margin:0.8rem auto;
+  text-align:center;
+}
+.rightBox{
+  width:70%;
+  height:9rem;
+  position:relative;
+}
+.main{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.productName{
+  width:10rem;
+  height:2rem;
+  font-size:20px;
+  font-weight:700;
+  text-transform:capitalize;
+}
+.productPrice{
+  width:5rem;
+  height:1.5rem;
+}
+.productDetails{
+ width:10rem;
+  font-size:18px; 
+}
+.footer{
+  width:100%;
+  height:2rem;
+  position:absolute;
+  bottom:5px;
+  display:flex;
+  font-size:25px;
+  font-weight:600;
+  text-transform:capitalize;
+}
+.action{
+  display:flex;
+  
+}
+.symbolSize{
+  width:2rem;
+  height:2rem;
+}
+.action-box{
+  margin:0 10px;
+}
+.action{
+  position:relative;
+  left:20rem;
+}
+.starSymbol{
+ width:3rem;
+  height:2rem;
+  font-size:20px
+}
+.productDetails{
+  width:25rem;
+  height:5rem;
+}

@@ -1,0 +1,42 @@
+
+.Navbar{
+  background-color:#1cb536;
+  width:97%;
+  height:30%;
+  color:white;
+  margin:0 auto;
+  font-size:30px;
+  padding:10px;
+  display:flex;
+  font-weight:800;
+  justify-content:space-between;
+  align-items:center;
+  list-style:none;
+  padding:20px; 
+  box-shadow:3px 3px 3px 3px #6c6c04
+}
+.CardImg{
+    width:3rem;
+     height:3rem;
+}
+.cartContainer{
+   width:4rem;
+   height:4rem;
+   position:relative;
+}
+
+.ItemCount{
+  font-size:15px;
+  width:1.5rem;
+  height:1.5rem;
+  background-color:#70591a;
+  position:absolute;
+  margin-left:-20px;
+  border-radius:50%;
+  text-align:center;
+}
+
+a{
+  text-decoration:none;
+  color:#acebfb;
+}
