@@ -4,14 +4,14 @@ import {AiOutlineStar} from "react-icons/ai"
 import {BsStarHalf} from "react-icons/bs"
 import Styled from '../styles/stars.module.css'
 
-const Stars = ({stars}) => {
-  console.log(stars)
-       const rating= Array.from({ length: 5 }, (v, index) =>{
+const Stars = ({rating}) => {
+  // console.log(rating)
+       const stars= Array.from({ length: 5 }, (v, index) =>{
                      let number=index+0.5;
 
                 return <span key={index}>
                   {
-                   stars >= index+1 ? <AiFillStar className={Styled.icon}/> : stars >= number 
+                   rating >= index+1 ? <AiFillStar className={Styled.icon}/> : rating >= number 
                           ? <BsStarHalf className={Styled.icon}/> :<AiOutlineStar className={Styled.icon}/>
                     
                   }
@@ -20,7 +20,7 @@ const Stars = ({stars}) => {
   
   return(
       <>
-        {rating}
+        {stars}
       </>
   )
     

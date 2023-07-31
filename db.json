@@ -3,18 +3,48 @@
     {
       "id": "1",
       "isSorted": false,
-      "name": "table",
-      "details": "this is very attractive and awesome table",
-      "price": 6000,
-      "rating": 4
+      "image":"https://m.media-amazon.com/images/I/61E+Sz0OooL._SX522_.jpg",
+      "name": "Batteries",
+      "details": "Amazon Basics AmazonBasics AAA Performance Alkaline Non-Rechargeable Batteries (8-Pack) - Appearance May Vary",
+      "price": "169",
+      "rating": "4"
     },
     {
      "id": "2",
       "isSorted": false,
-      "name": "chairs",
-      "details": "this is very attractive and awesome table",
-      "price": 6000,
-      "rating": 4
+      "image":"https://m.media-amazon.com/images/I/71OkzKUrvFL._SX522_.jpg",
+      "name": "Red Office Chair",
+      "details": "Rose Designer Chairs® SpaceX Leatherette Executive High Back Revolving Office Chair (Red)
+Visit the ROSE Store",
+      "price": "8100",
+      "rating": "4.2"
+    },
+    {
+     "id": "3",
+      "isSorted": false,
+      "image":"https://m.media-amazon.com/images/I/51mJQSqnYAL._SX522_.jpg",
+      "name": "Single Seater Sopha  ",
+      "details": "PRODUCT DIMENSIONS: Close: Lenght 35 inches (89 cms), Depth 32 inches (81 cms), Height 39 inches (99 cms), Seating Height 20 inches (51 cms) , Open: Length 39 inches (99 cms), Depth 63 inches (160 cms), Height 38 inches (97 cms), Seating Height 20 inches (51 cms)",
+      "price": "21,999",
+      "rating": "4.5"
+    },
+  {
+     "id": "4",
+      "isSorted": false,
+      "image":"https://m.media-amazon.com/images/I/61hDhiyIQBL._SX522_.jpg",
+      "name": "Wood Sofa Cums Bed",
+      "details": "WOODTREND Solid Teak Wood Sofa Cums Bed for Home Living Room | Sofa Cums Bed for Living Room Wooden with Storage | Sofa Cums Bed 3 Seater Furniture Without Pillow with Mattres | Brown Natural Finish",
+      "price": "31,000",
+      "rating": "4"
+    },
+    {
+     "id": "5",
+      "isSorted": false,
+      "image":"https://m.media-amazon.com/images/I/61sjqHHZ2hS._SX522_.jpg",
+      "name": "Kohler Emile 26448IN-4-VS Metal Pull-Down Sprayer Kitchen Faucet",
+      "details": "Kohler Emile 26448IN-4-VS Metal Pull-Down Sprayer Kitchen Faucet, Sweep Spray with Multi-Function Docking Spray Head Technology (Vibrant Stainless Steel Finish)",
+      "price": "9,499",
+      "rating": "3.7"
     }
   ]
 }

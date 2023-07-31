@@ -1,7 +1,12 @@
   import {Stars} from './ratingStar'
 import '../styles/CartItem.css'
-const CartItem=()=>{
-  const star=2.4;
+
+
+const CartItem=(props)=>{
+  // const star="2.4";
+  
+  console.log(props.product);
+ const  {name,details,price,rating}=props.product
   return(
     <>
      <div className="itemCart">
@@ -13,15 +18,15 @@ const CartItem=()=>{
       <div className="rightBox"> 
         <div className='main'>
         <div className='productNamePrice'>
-          <div className='productName'>product name</div>
-          <div className='productPrice'>Rs.6000</div>
+          <div className='productName'>{name}</div>
+          <div className='productPrice'>Rs.{price}</div>
         </div>
-          <div className='productDetails'>Each product is deletable, on clicking of the delete button you should delete the product and show some sort of Alert/Notification
+          <div className='productDetails'>{details}
 </div>
         </div>
       <div className="footer">
       <div className='rating'>
-      <Stars stars={star}/>
+      <Stars rating={rating}/>
       </div>
       <div className='action'>
       <div className='action-box'>
