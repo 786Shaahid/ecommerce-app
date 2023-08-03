@@ -1,6 +1,6 @@
 import Styled from '../styles/addProducts.module.css' ;
 import {useRef,useState} from 'react';
-import {addProductAsync,actions} from '../redux/reducer/ecommerceReducer';
+import {actions} from '../redux/reducer/ecommerceReducer';
 import {useDispatch,useSelector} from 'react-redux';
 import {useEffect} from 'react';
 
@@ -23,15 +23,13 @@ const AddProduct=()=>{
   
 const handleSubmit=(e)=>{
   e.preventDefault();
-    
   setAddProduct({
     name: '',
       details: '',
       price: '',
       rating: ''
   });
-  
-  dispatch(addProductAsync({addProduct}));
+  dispatch(actions.add({addProduct,addMessage}));
   
 }
   

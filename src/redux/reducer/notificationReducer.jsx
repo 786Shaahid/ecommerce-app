@@ -20,7 +20,7 @@ export const notificationSlice=createSlice({
        state.message=action.payload.message;
      },
       [actions.add]:(state,action)=>{
-          state.message='Added Successfully..!'
+          state.message=action.payload.addMessage;
       }
       
     
