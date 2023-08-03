@@ -23,7 +23,7 @@
   height:1rem;
 }
 .itemCart{
-  width:60rem;
+  width:50rem;
   height:10rem;
   margin:10px auto;
   background-color:white;
@@ -57,9 +57,9 @@
 
 .productName{
   width:10rem;
-  height:2rem;
-  font-size:20px;
-  font-weight:700;
+  min-height:2rem;
+  font-size:18px;
+  font-weight:600;
   text-transform:capitalize;
   border:1px solid black;
   margin:2px;
@@ -72,7 +72,7 @@
 }
 .productDetails{
   width:10rem;
-  font-size:18px; 
+  font-size:16px; 
 }
 .footer{
   width:100%;
@@ -80,14 +80,14 @@
   position:absolute;
   bottom:5px;
   display:flex;
-  font-size:25px;
+  font-size:20px;
   font-weight:600;
   text-transform:capitalize;
 }
 .rating{
   width:1.5rem;
   height:1.5rem;
-   border:1px solid black;
+  border:1px solid black;
   margin:2px;
 }
 
@@ -113,8 +113,8 @@
 }
 .productDetails{
   width:27rem;
-  height:5rem;
-  overflow:hidden;
+  min-height:5rem;
+  overflow:auto;
   padding:5px;
    border:1px solid black;
   margin:2px;

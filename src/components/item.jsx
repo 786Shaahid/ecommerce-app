@@ -1,33 +1,53 @@
 import {CartItem} from './CartItem';
 import {EditCart} from './editCart';
-import {ecommerceSelector,getInitialStateAsync} from '../redux/reducer/ecommerceReducer' ;
-import {useEffect} from 'react'
+import {actions, ecommerceSelector,getInitialStateAsync,sortSelector} from '../redux/reducer/ecommerceReducer' ;
+import {useEffect,useState} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
+import {notificationSelector,resetNotification} from '../redux/reducer/notificationReducer'
 
 const Items=()=>{
+ const dispatch=useDispatch();
  const products=useSelector(ecommerceSelector);
-  const dispatch=useDispatch();
-
+  const [selectedId,setSelectedId]=useState(null);
+  const message=useSelector(notificationSelector);
+  const isSorted=useSelector(sortSelector);
+  // fetching initial data from api
   useEffect(()=>{
     dispatch(getInitialStateAsync());
-  },[])
-
-  console.log(products)
+  },[]);
+// set message for notification 
+   useEffect(()=>{
+     if(message){
+       setTimeout(()=>{
+         dispatch(resetNotification());
+       },2000)
+     }
+   });
+  // product sort by price
+const productSortedByPrice= products.slice().sort((a,b)=> a.price-b.price);
+  const allItems=isSorted ?productSortedByPrice:products;
   
   return(
     <>
     <div className="bodyContainer">
-     <button type='submit' className="sortByPriceBtn">
-        <span> Sort by price </span><img src='https://cdn-icons-png.flaticon.com/128/5974/5974771.png' alt='cross' className="crossBtn"/ >
+      
+    { message && <div className='notification'>{message}</div>}
+     <button type='submit' className="sortByPriceBtn" 
+       onClick={()=>dispatch(actions.sort())}
+       >
+        <span> Sort by price </span>{isSorted && <img src='https://cdn-icons-png.flaticon.com/128/5974/5974771.png' alt='cross' className="crossBtn"/ >}
      </button>
       {
-        products.map((product,index)=>(
-          // console.log(product),
-                  <CartItem  product={product} index={index}/>
-        ))    
+    allItems.length ?   allItems.map((product,index)=>(
+         <>
+           {  index===selectedId ? <EditCart  index={index}/> :
+                  <CartItem  product={product} index={index} selectedId={setSelectedId}/>
+           }
+         </>
+        )):<h1 className='waiting' >Please Wait, it's loading....</h1>    
         
       }
-     {/* <EditCart/> */}
+     
       
     </div>
     </>

@@ -1,14 +1,22 @@
 import Styled from "../styles/editCart.module.css"
+import { useDispatch ,useSelector} from "react-redux";
+import {useState} from 'react'   ;
+import { actions,ecommerceSelector } from "../redux/reducer/ecommerceReducer";
+const EditCart=({index})=>{
+    const products=useSelector(ecommerceSelector);
+ const [updateProduct,setUpdateProduct]=useState(products[index]);
+  const {name,details,rating,price,image}=updateProduct;
 
+   const dispatch=useDispatch();
+   const message='Updated Successfully..'
    
-const EditCart=()=>{
-   const value='Each product is deletable, on clicking of the delete button you should delete the product and show some sort of Alert/Notification'
+  
   return(
     <>
      <div className={Styled.itemCart}>
       <div className={Styled.leftBox}>
       <div className={Styled.imgBox}> 
-        Image
+       <img src={image? image:null} alt='item image'/>
       </div>
       </div>
       <div className={Styled.rightBox}> 
@@ -17,31 +25,37 @@ const EditCart=()=>{
           <div >
             <input 
               text='type' 
-              value=' product name' 
+              value={name}
+              name='name'
               className={Styled.productName}
+                onChange={(e)=> setUpdateProduct({...updateProduct,name:e.target.value})}
+              
               />
+            
           </div>
           <div >
-           <input
+           Rs.<input
              text='text'
-             value='Rs.6000'
+             value={price}
              className= {Styled.productPrice}
+                onChange={(e)=>setUpdateProduct({...updateProduct,price:e.target.value})}
              />
           </div>
         </div>
           <div >
           <textarea
-            
-            value={value}
+            value={details}
             className={Styled.productDetails}
+            onChange={(e)=> setUpdateProduct({...updateProduct,details:e.target.value})}
             />  
           </div>
         </div>
       <div className={Styled.footer}>
       <div >rating : <input 
                        type="text"
-                       rows="4"
+                       value={rating}
                        className={Styled.rating}
+                        onChange={(e)=>setUpdateProduct({...updateProduct,rating:e.target.value})}
                     />
       </div>
       <div className={Styled.action}>
@@ -51,10 +65,9 @@ const EditCart=()=>{
           </div>
       <div  className={Styled.actionBox}>
       
-       <button type='submit'  className={Styled.actionBtn} >Save </button>
-         
-          
-         
+       <button type='submit'  className={Styled.actionBtn} 
+         onClick={()=>dispatch(actions.update({index,updateProduct,message})) }
+         >Save </button>
       </div>
       </div>
       </div>

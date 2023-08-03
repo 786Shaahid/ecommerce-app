@@ -1,6 +1,6 @@
 .addProductcontainer{
    width:98%;
-  height:35rem;
+ min-height:35rem;
   background-color:green;
   border:2px solid #464007;
   margin:0 auto;

@@ -1,18 +1,20 @@
   import {Stars} from './ratingStar'
 import '../styles/CartItem.css'
+import {useDispatch} from 'react-redux'
+import {actions} from '../redux/reducer/ecommerceReducer'
 
-
-const CartItem=(props)=>{
-  // const star="2.4";
-  
-  console.log(props.product);
- const  {name,details,price,rating}=props.product
+const CartItem=({product,index,selectedId})=>{
+   const dispatch=useDispatch();
+   const message="Deleted Successfully";
+     // console.log(props.product);
+ const  {name,details,price,rating,image}=product;
   return(
     <>
+      
      <div className="itemCart">
       <div className="leftBox">
          <div className='imgBox'> 
-        Image
+       <img src={image} alt="item image"/>    
       </div>
       </div>
       <div className="rightBox"> 
@@ -34,11 +36,13 @@ const CartItem=(props)=>{
           src='https://cdn-icons-png.flaticon.com/128/2919/2919592.png'
           alt='edit'
           className="symbolSize" 
+          onClick={()=>selectedId(index)}
           /></div>
       <div  className='action-box'>
        <img src='https://cdn-icons-png.flaticon.com/128/1632/1632602.png'
           className="symbolSize" 
-         alt='delete-button'
+         alt='delete-item'
+         onClick={()=> dispatch(actions.delete({index,message}))}
          />
       </div>
       </div>

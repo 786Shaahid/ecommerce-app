@@ -1,6 +1,13 @@
 import styled from '../styles/Navbar.module.css';
 import {NavLink,Outlet} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { ecommerceSelector } from '../redux/reducer/ecommerceReducer';
+
 const Navbar=()=>{
+   const products=useSelector(ecommerceSelector);
+   const itemNumber=products.length;
+  
+  
 return( 
   <>
     <div className={styled.Navbar} >
@@ -17,7 +24,7 @@ return(
       </NavLink >
       <div className={styled.cartContainer}>
         <img  src="https://cdn-icons-png.flaticon.com/128/8577/8577866.png" alt="count-item" className={styled.CardImg} />
-        <span className={styled.ItemCount}>10</span>
+        <span className={styled.ItemCount}>{itemNumber}</span>
       </div>
     </div>
          <Outlet />

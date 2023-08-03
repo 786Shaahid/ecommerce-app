@@ -8,3 +8,25 @@ body {
   border:1px solid #126812;
   
 }
+/* for notification  */
+.notification{
+  width:15rem;
+  height:3rem;
+  background-color:white;
+  text-align:center;
+  font-size:18px;
+  font-weight:600;
+  padding-top:0.5rem;
+  margin-left:40rem;
+  color:#646417;
+  text-transform:capitalize;
+}
+#addNotification{
+  background-color:#394724;
+  color:white;
+  font-size:19px;
+}
+.waiting{
+  color:white;
+  
+}
