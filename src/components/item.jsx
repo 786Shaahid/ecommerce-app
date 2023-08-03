@@ -40,7 +40,7 @@ const productSortedByPrice= products.slice().sort((a,b)=> a.price-b.price);
       {
     allItems.length ?   allItems.map((product,index)=>(
          <>
-           {  index===selectedId ? <EditCart  index={index}/> :
+           {  index===selectedId ? <EditCart product={product} index={index} selectedId={setSelectedId}/> :
                   <CartItem  product={product} index={index} selectedId={setSelectedId}/>
            }
          </>

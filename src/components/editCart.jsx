@@ -1,22 +1,24 @@
 import Styled from "../styles/editCart.module.css"
-import { useDispatch ,useSelector} from "react-redux";
-import {useState} from 'react'   ;
+import { useDispatch,useSelector } from "react-redux";
 import { actions,ecommerceSelector } from "../redux/reducer/ecommerceReducer";
-const EditCart=({index})=>{
-    const products=useSelector(ecommerceSelector);
- const [updateProduct,setUpdateProduct]=useState(products[index]);
-  const {name,details,rating,price,image}=updateProduct;
+import { useState } from "react";
 
+const EditCart=({index,selectedId})=>{
+  const products=useSelector(ecommerceSelector);
+  const product=products[index];
+const [updateProduct,setUpdateProduct]=useState(product);
+  const {name,details,rating,price,image}=updateProduct;
    const dispatch=useDispatch();
    const message='Updated Successfully..'
    
   
   return(
     <>
+      <form>
      <div className={Styled.itemCart}>
       <div className={Styled.leftBox}>
       <div className={Styled.imgBox}> 
-       <img src={image? image:null} alt='item image'/>
+       <img src={image} alt='item image'/>
       </div>
       </div>
       <div className={Styled.rightBox}> 
@@ -28,10 +30,9 @@ const EditCart=({index})=>{
               value={name}
               name='name'
               className={Styled.productName}
-                onChange={(e)=> setUpdateProduct({...updateProduct,name:e.target.value})}
-              
+                onChange={(e)=> 
+                  setUpdateProduct({...updateProduct,name:e.target.value})}
               />
-            
           </div>
           <div >
            Rs.<input
@@ -60,19 +61,25 @@ const EditCart=({index})=>{
       </div>
       <div className={Styled.action}>
       <div className={Styled.actionBox}>
-       <button type='submit'  className={Styled.actionBtn} >Cancel </button>
+       <button type='submit'  className={Styled.actionBtn} 
+          onClick={()=>selectedId(null)}   >Cancel </button>
          
           </div>
       <div  className={Styled.actionBox}>
       
        <button type='submit'  className={Styled.actionBtn} 
-         onClick={()=>dispatch(actions.update({index,updateProduct,message})) }
+         onClick={()=>{
+            selectedId(null);            
+ dispatch(actions.update({index,updateProduct,message}));
+                      } }
          >Save </button>
       </div>
       </div>
       </div>
       </div>
       </div>
+      </form>
+        
     </>
   )
 }
