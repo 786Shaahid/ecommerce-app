@@ -30,10 +30,9 @@ const handleSubmit=(e)=>{
       price: '',
       rating: ''
   });
+  
   dispatch(addProductAsync({addProduct}));
-  dispatch(actions.add(addMessage))
-  // console.log(products)
-  // console.log(addProduct)
+  
 }
   
   // console.log(addProduct);
